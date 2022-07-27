@@ -16,7 +16,6 @@
         <div class="nav-wrapper">
           <a href="#"><img src="./images/logo.svg" alt="Manage"></a>
           <button class="mobile-nav-toggle" aria-control="primary-navigation" aria-expanded="false">
-            <img class="icon-close" src="images/icon-close.svg" alt="" aria-hidden="true">
             <img class="icon-hamburger" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
             <span class="visually-hidden">Menu</span>
           </button>
@@ -30,20 +29,21 @@
               <li><a href="#">Community</a></li>
             </ul>
           </nav>
-          <button class="btn | display-sm-none display-md-inline-flex">Get Started</button>
+          <!-- Accompanying the implementation in style.css file on line 355. -->
+          <!-- <button class="btn | display-sm-none display-md-inline-flex">Get Started</button> -->
+          <button class="btn btn--nav">Get Started</button>
         </div>
       </div>
     </header>
 
     <main>
-
       <!-- Hero Section -->
       <section class="px-900">
         <div class="container">
           <div class="even-columns">
             <!-- left column -->
-            <div>
-              <h1 class="fs-primary-heading fw-bold">
+            <div class="flow">
+              <h1 class="primary-heading">
                 Bring everyone together to build better products.
               </h1>
               <p>
@@ -65,8 +65,8 @@
         <div class="container">
           <div class="even-columns">
             <!-- left column -->
-            <div>
-              <h2 class="fs-secondary-heading fw-bold">
+            <div class="flow">
+              <h2 class="secondary-heading">
                 What's different about Manage?
               </h2>
               <p>
@@ -75,33 +75,36 @@
             </div>
             <!-- right column -->
             <div>
-              <ul class="numbered-list" role="list">
+              <ul class="numbered-list | flow" role="list">
                 <li>
-                  <span class="about__chip btn btn--chip">01</span>
-                  <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
-                  <p class="about-cards__text paragraph-1">
-                    See how your day-to-day tasks fit into the wider vision. Go from
-                    tracking progress at the milestone level all the way done to the
-                    smallest of details. Never lose sight of the bigger picture again.
-                  </p>
+                  <div class="flow" style="--flow-spacer: 1em;">
+                    <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
+                    <p data-width="wide">
+                      See how your day-to-day tasks fit into the wider vision. Go from
+                      tracking progress at the milestone level all the way done to the
+                      smallest of details. Never lose sight of the bigger picture again.
+                    </p>
+                  </div>
                 </li>
                 <li>
-                  <span class="btn btn--chip">02</span>
-                  <h3 class="fs-600 fw-bold">Advanced built-in reports</h3>
-                  <p class="about-cards__text paragraph-1">
-                    Set internal delivery estimates and track progress toward company
-                    goals. Our customisable dashboard helps you build out the reports
-                    you need to keep key stakeholders informed.
-                  </p>
+                  <div class="flow" style="--flow-spacer: 1em;">
+                    <h3 class="fs-600 fw-bold">Advanced built-in reports</h3>
+                    <p data-width="wide">
+                      Set internal delivery estimates and track progress toward company
+                      goals. Our customisable dashboard helps you build out the reports
+                      you need to keep key stakeholders informed.
+                    </p>
+                  </div>
                 </li>
                 <li>
-                  <span class="btn btn--chip">03</span>
-                  <h3 class="fs-600 fw-bold">Everything you need in one place</h3>
-                  <p class="about-cards__text paragraph-1">
-                    Stop jumping from one service to another to communicate, store files,
-                    track tasks and share documents. Manage offers an all-in-one team
-                    productivity solution.
-                  </p>
+                  <div class="flow" style="--flow-spacer: 1em;">
+                    <h3 class="fs-600 fw-bold">Everything you need in one place</h3>
+                    <p data-width="wide">
+                      Stop jumping from one service to another to communicate, store files,
+                      track tasks and share documents. Manage offers an all-in-one team
+                      productivity solution.
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -111,7 +114,7 @@
 
       <!-- Carousel section -->
       <section class="carousel | px-700">
-        <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
+        <h2 class="secondary-heading">What they've said</h2>
         <!-- Insert Carousel Here -->
         <button class="btn">Get Started</button>
       </section>
@@ -124,7 +127,7 @@
         <div class="container">
           <div class="even-columns">
             <div>
-              <p class="fs-secondary-heading fw-bold">
+              <p class="secondary-heading">
                 Simplify how your team works today.
               </p>
             </div>
@@ -153,7 +156,7 @@
           <!-- Column two -->
           <div>
             <nav class="footer-nav" aria-label="Footer">
-              <ul role="list">
+              <ul role="list" class="flow" style="--flow-spacer: 1em;">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Products</a></li>

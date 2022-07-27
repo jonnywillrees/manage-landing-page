@@ -91,13 +91,6 @@ body {
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.2;
-}
-
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -136,6 +129,16 @@ body {
   color: var(--clr-primary-400);
 }
 
+p:not([class]) {
+  opacity: 0.7;
+  max-width: 33ch;
+}
+
+/* CUBE way to modify a element/component */
+p[data-width="wide"] {
+  max-width: 40ch;
+}
+
 /* ------ */
 /* button */
 /* ------ */
@@ -168,6 +171,13 @@ body {
 .btn--inverted:focus-visible {
   background-color: var(--clr-neutral-100);
   color: var(--clr-accent-300);
+}
+
+/* Better solution to line 355. */
+@media(max-width: 50em) {
+  .btn--nav {
+    display: none;
+  }
 }
 
 /* ---------- */
@@ -246,10 +256,6 @@ body {
     border: 0;
     padding: 0.5em;
   }
-  
-  .mobile-nav-toggle .icon-close {
-    display: none;
-  }
 }
 
 /* --------------- */
@@ -265,6 +271,31 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding-inline: 1rem;
+  
+  /* create 1rem of space on each side of container on small screens */
+  width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.flow > * + * {
+  margin-top: var(--flow-spacer, 2.5em);
 }
 
 .text-accent-100 {
@@ -308,11 +339,17 @@ body {
 .fw-semi-bold { font-weight: var(--fw-semi-bold); }
 .fw-bold { font-weight: var(--fw-bold); }
 
-.fs-primary-heading {
+.primary-heading,
+.secondary-heading {
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+}
+
+.primary-heading {
   font-size: var(--fs-primary-heading);
 }
 
-.fs-secondary-heading {
+.secondary-heading {
   font-size: var(--fs-secondary-heading);
 }
 
@@ -329,7 +366,8 @@ body {
   padding-block: var(--spacer-900);
 }
 
-.display-sm-none {
+/* TOO ABSTRACT */
+/* .display-sm-none {
   display: none;
 }
 
@@ -337,25 +375,4 @@ body {
   .display-md-inline-flex {
     display: inline-flex;
   }
-}
-
-.container {
-  --max-width: 1110px;
-  --padding-inline: 1rem;
-  
-  /* create 1rem of space on each side of container on small screens */
-  width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
-  margin-inline: auto;
-}
-
-.even-columns {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 50em) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
-}
+} */

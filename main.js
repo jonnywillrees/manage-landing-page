@@ -2,7 +2,6 @@ const primaryHeader = document.querySelector('.primary-header');
 const navToggleBtn = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primary-navigation');
 
-const closeIcon = document.querySelector('.icon-close');
 const hamburgerIcon = document.querySelector('.icon-hamburger');
 
 navToggleBtn.addEventListener('click', () => {
